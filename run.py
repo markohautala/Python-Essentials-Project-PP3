@@ -11,7 +11,7 @@ with open('creds.json', 'r') as file:
 
 # This code retrieves an API key named 'API_KEY' from a dictionary 
 # called creds and assigns it to the variable API.
-API= creds.get('API_KEY')
+API_KEY= creds.get('API_KEY')
 
 # This code prompts the user for a city name, fetches weather 
 # data from OpenWeatherMap, and repeats until a valid city is entered, 
@@ -26,9 +26,7 @@ while True:
         print('Please enter another location or city name.. ')
         continue
 
-    HTTP_LOCATION = 'http://api.openweathermap.org/data/2.5/weather?q='
-
-    url = HTTP_LOCATION + CITY + '&appid=' + API
+    url = f'http://api.openweathermap.org/data/2.5/weather?q={CITY}&appid={API_KEY}'
 
     response = requests.get(url)
 
