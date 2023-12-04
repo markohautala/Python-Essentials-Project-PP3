@@ -1,8 +1,8 @@
-# This code imports the requests library for making HTTP requests 
-# and the json library for handling JSON data in a Python script.
-
 import requests
 import json
+
+# This code above imports the requests library for making HTTP requests 
+# and the json library for handling JSON data in a Python script.
 
 # This code reads information from a file named 'creds.json' 
 # and stores it in a variable called 'creds'.
