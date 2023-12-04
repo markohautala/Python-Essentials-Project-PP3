@@ -3,7 +3,7 @@ import requests
 API = '93746a98d57a67a21efa064b49cecea4'
 
 while True:
-    CITY = input('Enter a city-name or location: ')
+    CITY = input('Enter a city-name or location:\n')
 
     # Validate user input
     if not CITY:
