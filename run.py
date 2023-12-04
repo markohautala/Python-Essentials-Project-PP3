@@ -3,7 +3,7 @@ import requests
 API = '93746a98d57a67a21efa064b49cecea4'
 
 while True:
-    CITY = input('Enter a name on a city or location: ')
+    CITY = input('Enter a city-name or location: ')
 
     # Validate user input
     if not CITY:
@@ -23,7 +23,7 @@ while True:
         break
     else:
         print('Could not find the location you were looking for.')
-        print('Please try again to enter a valid city name:')
+        print('Please try again to enter a valid city-name:')
 
 # Rest of your code for processing the weather data
 if response.status_code == 200:
@@ -31,13 +31,15 @@ if response.status_code == 200:
     current_temperature_kelvin = data['main']['temp']
     current_temperature_celsius = current_temperature_kelvin - 273.15
     feels_like_temperature_kelvin = data['main']['feels_like']
-    feels_like_temperature_celsius = feels_like_temperature_kelvin - 273.15
+    celsius_feel_like = feels_like_temperature_kelvin - 273.15
     weather_description = data['weather'][0]['description']
     wind_speed = data['wind']['speed']
-
-    print(f'Current Temperature: {current_temperature_celsius:.0f} °C')
-    print(f'Feels Like: {feels_like_temperature_celsius:.0f} °C')
-    print(f'Weather Type: {weather_description}')
-    print(f'Wind Speed: {wind_speed:.1f} m/s')
+    print(' ')
+    print(' ')
+    print(f'Here is your requested weather information for {CITY}!')
+    print(f'Current temperature is {current_temperature_celsius:.0f} °C')
+    print(f'But, the temperature feels like {celsius_feel_like:.0f} °C')
+    print(f'Weather type is {weather_description}')
+    print(f'The wind speed is {wind_speed:.1f} m/s')
 else:
     print('Cannot find the specific city')
