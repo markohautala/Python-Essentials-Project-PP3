@@ -19,7 +19,7 @@ API_KEY= creds.get('API_KEY')
 # the user to enter a valid city.
 
 while True:
-    CITY = input('Enter a city-name or location:\n')
+    CITY = input('Enter a location to find out the weather there:\n')
 
     if not CITY:
         print('Location not found.. ')
