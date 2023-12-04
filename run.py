@@ -1,11 +1,26 @@
-import requests
+# This code imports the requests library for making HTTP requests 
+# and the json library for handling JSON data in a Python script.
 
-API = '93746a98d57a67a21efa064b49cecea4'
+import requests
+import json
+
+# This code reads information from a file named 'creds.json' 
+# and stores it in a variable called 'creds'.
+with open('creds.json', 'r') as file:
+    creds = json.load(file)
+
+# This code retrieves an API key named 'API_KEY' from a dictionary 
+# called creds and assigns it to the variable API.
+API= creds.get('API_KEY')
+
+# This code prompts the user for a city name, fetches weather 
+# data from OpenWeatherMap, and repeats until a valid city is entered, 
+# stopping only if the API request is successful; otherwise, it informs 
+# the user to enter a valid city.
 
 while True:
     CITY = input('Enter a city-name or location:\n')
 
-    # Validate user input
     if not CITY:
         print('Location not found.. ')
         print('Please enter another location or city name.. ')
@@ -15,17 +30,19 @@ while True:
 
     url = HTTP_LOCATION + CITY + '&appid=' + API
 
-    # Make the request to the API
     response = requests.get(url)
 
-    # Check if the request was successful
     if response.status_code == 200:
         break
     else:
         print('Could not find the location you were looking for.')
         print('Please try again to enter a valid city-name:')
 
-# Rest of your code for processing the weather data
+# This code checks if the weather request was successful 
+# (status code 200) and, if so, prints key weather information for 
+# a specified city; otherwise, it prints an error message 
+# for a city not found.
+
 if response.status_code == 200:
     data = response.json()
     current_temperature_kelvin = data['main']['temp']
