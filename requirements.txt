@@ -1,1 +1,4 @@
 requests>=2.26.0,<3.0.0
+"""
+write in command terminal "pip install requests"
+"""

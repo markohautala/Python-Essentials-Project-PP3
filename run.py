@@ -1,23 +1,31 @@
 import requests
 
-API_KEY = '93746a98d57a67a21efa064b49cecea4'
+API = '93746a98d57a67a21efa064b49cecea4'
 
-CITY = input('Enter a city name: ')
+while True:
+    CITY = input('Enter a name on a city or location: ')
 
-url = f'http://api.openweathermap.org/data/2.5/weather?q={CITY}&appid={API_KEY}'
+    # Validate user input
+    if not CITY:
+        print('Location not found.. ')
+        print('Please enter another location or city name.. ')
+        continue
 
-response = requests.get(url)
+    HTTP_LOCATION = 'http://api.openweathermap.org/data/2.5/weather?q='
 
-# This Python code above asks the user for a city name, then uses that name 
-# to check the weather using an online service called OpenWeatherMap. 
-# It gets the weather information by sending a API KEY along with the city name, 
-# and stores the results in the response variable.
+    url = HTTP_LOCATION + CITY + '&appid=' + API
 
-# This code below, If the weather data request was successful (status code 200), 
-# the code extracts temperature, feels-like temperature, weather description, 
-# and wind speed from the received data and prints them. 
-# Otherwise, it prints an error message indicating 
-# that the specific city couldn't be found.
+    # Make the request to the API
+    response = requests.get(url)
+
+    # Check if the request was successful
+    if response.status_code == 200:
+        break
+    else:
+        print('Could not find the location you were looking for.')
+        print('Please try again to enter a valid city name:')
+
+# Rest of your code for processing the weather data
 if response.status_code == 200:
     data = response.json()
     current_temperature_kelvin = data['main']['temp']
