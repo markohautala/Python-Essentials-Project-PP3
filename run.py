@@ -14,9 +14,9 @@ with open('creds.json', 'r') as file:
 API_KEY = creds.get('API_KEY')
 
 # This code prompts the user for a city name, fetches weather
-# data from OpenWeatherMap, and repeats until a valid city is entered,
-# stopping only if the API request is successful; otherwise, it informs
-# the user to enter a valid city.
+# data from openweathermap.org, and repeats until a valid city is
+# entered, stopping only if the API request is successful; otherwise,
+# it informs the user to enter a valid city.
 
 while True:
     CITY = input('Enter a location to find out the weather there:\n')
