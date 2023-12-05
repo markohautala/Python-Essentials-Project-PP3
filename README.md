@@ -2,7 +2,10 @@
 
 (short desc. of app and purpose)
 (Here should there be a picture of the deployed website)
-(link to live version of website)
+
+[This is the link](https://python-weather-app-a79e89206b72.herokuapp.com/) to the deployed webpage/URL.
+
+[This is the link](https://github.com/markohautala/Python-Essentials-Project-PP3) to the GitHub repository for this project.
 
 ### How to use it
 
@@ -18,6 +21,7 @@
 ### Bugs or problems encountered
 
 #### Solved Bugs
+
 #### Unsolved Bugs
 
 ### Testing
