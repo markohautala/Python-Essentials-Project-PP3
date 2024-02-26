@@ -1,4 +1,4 @@
-# Python Weather App
+# Python Weather `API` App
 ### This Python script is a simple weather app that tells you the current weather in a city you choose. It uses OpenWeatherMap and asks for your city input until you provide a valid one. After inputting a city, it shows you the current temperature, "feels like" temperature, weather description, and wind speed.
 
 <p align="center">
