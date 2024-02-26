@@ -5,7 +5,7 @@
   <img src="/assets/images/responsive.png" alt="Responsive website" width="500">
 </p>
 
-[This is the link](https://python-weather-app-a79e89206b72.herokuapp.com/) to the deployed webpage/URL.
+[This is the link](https://python-weather-api-app-ed5b5d981766.herokuapp.com/) to the deployed webpage/URL.
 
 [This is the link](https://github.com/markohautala/Python-Essentials-Project-PP3) to the GitHub repository for this project.
 
